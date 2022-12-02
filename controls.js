@@ -130,18 +130,40 @@ var questions = {
 };
 
 var resUser = [];
-var numberQuestion = 0;
+var numberQuestion = 1;
+var tokenStart = 0;
+
+var qtdQuestion = 16;
+
+var start = false;
+
+while(start == false) {
+    start = window.confirm("Start");
+    if(start != false) {
+        optionsBtn('Start');
+    };
+};
 
 function optionsBtn(letter) {
+
+    tokenStart = 1;
+    hiddenShoqQuestion(tokenStart);
 
     // Add Res
     resUser.push(letter);
 
+    // Print Res (tests)
     console.log(resUser);
 
-    numberQuestion++;
+    if(numberQuestion >= qtdQuestion) {
+        tokenStart = 2;
+        hiddenShoqQuestion(tokenStart);
+    } else {
+        renderQuestion(numberQuestion);
+        numberQuestion++;
+    };
 
-    renderQuestion(numberQuestion);
+
 
 };
 
@@ -161,4 +183,37 @@ function renderQuestion(codeQuestion) {
     questionD.innerHTML = questions[codeQuestion].d;
     questionE.innerHTML = questions[codeQuestion].e;
 
+};
+
+function hiddenShoqQuestion(codeToken) {
+    if(codeToken == 1) {
+        document.querySelector(".questions__res").style.display = "block";
+        document.querySelector("#question").style.display = "block";
+    };
+    if(codeToken == 2) {
+        console.log(codeToken)
+        document.querySelector(".questions__res").style.display = "none";
+
+        countPoints();
+
+    };
+};
+
+var resSystem = ['Start','b','d','a','c','b','d','a','c','b','d','a','c','b','d','a','c',];
+
+var correct = 0;
+var failed = 0;
+
+function countPoints() {
+    resUser.forEach((res,i) => {
+        if(res === resSystem[i]) {
+            correct++;
+        } else {
+            console.log(res);
+            failed++;
+        };
+    });
+
+    correct--;
+    document.querySelector('#question').innerHTML = `Acertos: ${correct} | Erros: ${failed}`;
 };

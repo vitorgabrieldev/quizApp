@@ -92,3 +92,8 @@ button {
     font-size: 1.7rem;
     color: #fefefe;
 }
+
+
+.questions__res {
+    display: none;
+}
