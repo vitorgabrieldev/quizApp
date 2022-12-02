@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="./app.css">
+</head>
+<body>
+    <section class="containerQuiz">
+        <h1 class="title_quiz">Quiz App</h1>
+        <div class="container">
+            <h1 id="question"></h1>
+            <article class="questions__res">
+                <div class="question__container">
+                    <button onclick="optionsBtn('a')" class="btnRes" id="question1" data-option="1">Start</button>
+                </div>
+                <div class="question__container">
+                    <button onclick="optionsBtn('b')" class="btnRes" id="question2" data-option="2">Start</button>
+                </div>
+                <div class="question__container">
+                    <button onclick="optionsBtn('c')" class="btnRes" id="question3" data-option="3">Start</button>
+                </div>
+                <div class="question__container">
+                    <button onclick="optionsBtn('d')" class="btnRes" id="question4" data-option="4">Start</button>
+                </div>
+                <div class="question__container">
+                    <button onclick="optionsBtn('e')" class="btnRes" id="question5" data-option="5">Start</button>
+                </div> 
+            </article>
+        </div>
+    </section>
+
+    <script src="./controls.js"></script>
+</body>
+</html>

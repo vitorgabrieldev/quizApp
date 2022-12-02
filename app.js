@@ -1,0 +1,1 @@
+import { verifyOption } from './controls';
