@@ -129,16 +129,24 @@ var questions = {
     },
 };
 
+// Res question corrects
 var resSystem = ['Start','d','a','d','c','a','d','d','c','b','c','a','c','a','a','b'];
 
 
+// Info Tecs
 var resUser = [];
 var numberQuestion = 1;
 var tokenStart = 0;
 
+// Qtd question
 var qtdQuestion = 16;
 
+// Value Start
 var start = false;
+
+// Res Question
+var correct = 0;
+var failed = 0;
 
 while(start == false) {
     start = window.confirm("Start");
@@ -163,13 +171,9 @@ function optionsBtn(letter) {
 
         // Verify Correct
         if(letter == resSystem[numberQuestion - 1]) {
-            console.log('Acertou!');
-            console.log(resSystem[numberQuestion]);
+            correct++;
         } else {
-            console.log('Errou!');
-          
-            console.log(`NumberQuesion = ${numberQuestion}`);
-            console.log(`ResSystem = ${resSystem[numberQuestion]}`);
+            failed++;
         };
 
         renderQuestion(numberQuestion);
@@ -212,20 +216,7 @@ function hiddenShoqQuestion(codeToken) {
     };
 };
 
-
-var correct = 0;
-var failed = 0;
-
 function countPoints() {
-    resUser.forEach((res,i) => {
-        if(res === resSystem[i]) {
-            correct++;
-        } else {
-            console.log(res);
-            failed++;
-        };
-    });
-
-    correct--;
     document.querySelector('#question').innerHTML = `Acertos: ${correct} | Erros: ${failed}`;
+    document.querySelector('.number_question').style.display = 'none';
 };
