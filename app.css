@@ -42,7 +42,7 @@ body, html {
     font-size: 3rem;
     font-family: sans-serif;
     font-weight: 100;
-    color: #fefefe;
+    color: #ffffff;
     user-select: none;
     transition: .3s;
 }
@@ -93,6 +93,9 @@ button {
     color: #fefefe;
 }
 
+#question {
+    font-weight: 700;
+}
 
 .questions__res {
     display: none;
@@ -103,8 +106,26 @@ button {
     margin: .5rem;
     border-radius: .5rem;
     padding: .3rem;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .number_question {
     color: #fefefe;
+}
+
+.btn__function {
+    padding: .3rem 2rem .3rem 2rem;
+    background: rgb(87, 86, 86);
+    border-radius: .5rem;
+    color: #fefefe;
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn__function:hover {
+    transform: scale(.9);
 }

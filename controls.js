@@ -149,7 +149,7 @@ var correct = 0;
 var failed = 0;
 
 while(start == false) {
-    start = window.confirm("Start");
+    start = window.confirm("Do you want to start the quiz ?");
     if(start != false) {
         optionsBtn('Start');
     };
@@ -210,13 +210,37 @@ function hiddenShoqQuestion(codeToken) {
     if(codeToken == 2) {
         console.log(codeToken)
         document.querySelector(".questions__res").style.display = "none";
-
         countPoints();
-
     };
 };
 
 function countPoints() {
-    document.querySelector('#question').innerHTML = `Acertos: ${correct} | Erros: ${failed}`;
+    document.querySelector('#question').innerHTML = `Correct: ${correct} | Error: ${failed}`;
     document.querySelector('.number_question').style.display = 'none';
+
+    document.querySelector('#resetQuiz').innerHTML = "Restart";
+
 };
+
+// Reset quiz
+document.querySelector('#resetQuiz').addEventListener('click', () => {
+    let resetConfirm = window.confirm('restart:');
+    if(resetConfirm == true) {
+        // Reset infos
+        // Info Tecs
+        resUser = [];
+        numberQuestion = 1;
+        tokenStart = 0;
+        // Qtd question
+        qtdQuestion = 16;
+        // Value Start
+        start = false;
+        // Res Question
+        correct = 0;
+        failed = 0;
+        optionsBtn('Start');
+
+        document.querySelector('#resetQuiz').innerHTML = "Reset";
+
+    };
+});
