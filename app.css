@@ -97,3 +97,14 @@ button {
 .questions__res {
     display: none;
 }
+
+.info__quiz {
+    background: rgb(46, 43, 43);
+    margin: .5rem;
+    border-radius: .5rem;
+    padding: .3rem;
+}
+
+.number_question {
+    color: #fefefe;
+}
